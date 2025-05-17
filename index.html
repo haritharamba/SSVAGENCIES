@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSV Agencies - Your Trusted Partner</title>
+    <style>
+        :root {
+            --primary: #1a5f7a;         /* Deep Teal */
+            --secondary: #ff7e00;       /* Vibrant Orange */
+            --light: #f9f9f9;           /* Off-White */
+            --dark: #2c3e50;            /* Dark Blue-Gray */
+            --accent: #e74c3c;          /* Coral Red */
+            --gold: #ffc107;            /* Gold */
+            --gradient-start: #1a5f7a;  /* Deep Teal */
+            --gradient-end: #00b4d8;    /* Light Blue */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .logo {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: white;
+        gap: 10px;
+        }
+
+.logo-img {
+    height: 70px;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+
+
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .logo span {
+            color: var(--gold);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--gold);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 40px;
+                transition: left 0.3s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 0 0 20px 0;
+            }
+            
+            .nav-links a {
+                font-size: 18px;
+            }
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/600') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 150px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(26, 95, 122, 0.7), rgba(255, 126, 0, 0.7));
+            z-index: 1;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            border: 2px solid var(--secondary);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--gold);
+            color: var(--gold);
+        }
+        
+        /* About Section */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--dark);
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            color: var(--primary);
+        }
+        
+        .section-title h2::after {
+            content: '';
+            width: 70%;
+            height: 3px;
+            background-color: var(--secondary);
+            position: absolute;
+            bottom: -10px;
+            left: 15%;
+        }
+        
+        .section-title p {
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .about-image {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        
+        .about-image::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: -15px;
+            left: -15px;
+            z-index: -1;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .proprietor {
+            background: linear-gradient(135deg, #ffffff, var(--light));
+            padding: 30px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-top: 40px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .proprietor-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .proprietor-img::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px dashed var(--secondary);
+            border-radius: 50%;
+            top: -5px;
+            left: -5px;
+            animation: spin 30s linear infinite;
+        }
+        
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .proprietor-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .proprietor-info {
+            flex: 1;
+        }
+        
+        .proprietor-info h3 {
+            margin-bottom: 12px;
+            color: var(--primary);
+            font-size: 22px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .proprietor-info h3::after {
+            content: '';
+            width: 50%;
+            height: 2px;
+            background-color: var(--secondary);
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+        
+        /* Brands Section */
+        .brands {
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .brands::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--secondary) 0%, rgba(255, 126, 0, 0) 70%);
+            opacity: 0.1;
+            top: -150px;
+            left: -150px;
+            border-radius: 50%;
+        }
+        
+        .brands::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--primary) 0%, rgba(26, 95, 122, 0) 70%);
+            opacity: 0.1;
+            bottom: -150px;
+            right: -150px;
+            border-radius: 50%;
+        }
+        
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .brand-card {
+            background: linear-gradient(to bottom right, #ffffff, #f9f9f9);
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .brand-card::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            bottom: 0;
+            left: 0;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .brand-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .brand-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .brand-card img {
+            max-width: 120px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .brand-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .brand-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--primary);
+            transition: color 0.3s;
+        }
+        
+        .brand-card:hover h3 {
+            color: var(--secondary);
+        }
+        
+        .brand-card p {
+            color: #777;
+            font-size: 14px;
+        }
+        
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: all 0.4s ease;
+        }
+        
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(26, 95, 122, 0.8), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            vertical-align: middle;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #f9f9f9, #ffffff);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--secondary) 0%, rgba(255, 126, 0, 0) 70%);
+            opacity: 0.05;
+            top: -200px;
+            right: -200px;
+            border-radius: 50%;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, var(--primary) 0%, rgba(26, 95, 122, 0) 70%);
+            opacity: 0.1;
+            bottom: -75px;
+            left: -75px;
+            border-radius: 50%;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-size: 26px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .contact-info h3::after {
+            content: '';
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-detail h4 {
+            color: var(--secondary);
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 35px;
+        }
+        
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .map {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            min-height: 400px;
+            border: 5px solid white;
+        });
+        }
+        
+        .map {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 400px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .proprietor {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            header {
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 40px;
+                transition: left 0.3s ease;
+                display: flex;
+            }
+            
+            .hero {
+                padding: 100px 15px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 26px;
+            }
+            
+            .section-title p {
+                font-size: 14px;
+            }
+            
+            .brand-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+            
+            .brand-card {
+                padding: 20px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+            
+            .gallery-item img {
+                height: 150px;
+            }
+            
+            .proprietor-img {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .footer-column {
+                min-width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 24px;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 14px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .section-title h2 {
+                font-size: 24px;
+            }
+            
+            .about-text p {
+                font-size: 14px;
+            }
+            
+            .proprietor {
+                padding: 20px;
+            }
+            
+            .proprietor-img {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .brand-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            
+            .contact-detail {
+                flex-direction: column;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            
+            .contact-icon {
+                margin: 0 auto 15px;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+    <img src="LOGO.jpg" alt="SSV Logo" class="logo-img">
+    <span>SRI SAI VENKATESWARA AGENCIES</span>
+</div>
+
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#brands">Brands</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Welcome to SSV Agencies</h1>
+            <p>Your trusted partner for quality products and exceptional service</p>
+            <a href="#contact" class="btn">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Our Shop</h2>
+                <p>Learn more about SSV Agencies</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>SSV Agencies is a premier establishment offering a wide range of high-quality products from renowned national and international brands. With years of industry experience, we have established ourselves as a trusted name in the market.</p>
+                    <p>Our commitment to customer satisfaction and product excellence sets us apart from the competition. We believe in building long-term relationships with our clients by providing honest advice, competitive pricing, and exceptional after-sales service.</p>
+                    <p>Visit our shop to explore our extensive collection and experience personalized service from our knowledgeable staff who are always ready to assist you in finding the perfect products for your needs.</p>
+                </div>
+                <div class="about-image">
+                    <img src="OWNER.jpg"alt="SSV Agencies Store Front">
+                </div>
+            </div>
+            
+            <div class="proprietor">
+                <div class="proprietor-img">
+                    <img src="PROPE.jpg" alt="Proprietor">
+                </div>
+                <div class="proprietor-info">
+                    <h3>Meet Our Proprietor</h3>
+                    <p> Saradi. Madhava Rao With over 15 years of experience in the industry, our proprietor has built SRI SAI VENKATESWARA AGENCIES with a vision to provide quality products at competitive prices. Their expertise and passion for excellent customer service have been the driving force behind our success.</p>
+                    <p>Under their leadership, SSV Agencies has grown to become a trusted name in the community, known for reliability, integrity, and personalized customer experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section id="brands" class="section brands">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Brand Partners</h2>
+                <p>We collaborate with the best brands in the industry</p>
+            </div>
+            <div class="brand-grid">
+                <div class="brand-card">
+                    <img src="ASIANPAINTS.jpg" alt="Brand 1">
+                    <p>Premium quality products</p>
+                </div>
+                <div class="brand-card">
+                    <img src="GODREJ.jpg" alt="Brand 2">
+                    
+                    <p>Industry leading innovation</p>
+                </div>
+                <div class="brand-card">
+                    <img src="LT.jpg" alt="Brand 3">
+                    
+                    <p>Trusted for generations</p>
+                </div>
+                <div class="brand-card">
+                    <img src="SUDHAKAR.jpg" alt="Brand 4">
+                    
+                    <p>Excellence in design</p>
+                </div>
+                <div class="brand-card">
+                    <img src="CROMPTOM.jpg" alt="Brand 5">
+                    
+                    <p>Innovative solutions</p>
+                </div>
+                <div class="brand-card">
+                    <img src="AMARON.jpg" alt="Brand 6">
+                    <p>Global standards</p>
+                </div>
+                <div class="brand-card">
+                    <img src="BIRLA.jpg" alt="Brand 6">
+                    <p>Global standards</p>
+                </div>
+                <div class="brand-card">
+                    <img src="PIDILITE.jpg" alt="Brand 6">
+                    <p>Global standards</p>
+                </div>
+                <div class="brand-card">
+                    <img src="SUDHAKAR.jpg" alt="Brand 6">
+                    <p>Global standards</p>
+                </div>
+                <div class="brand-card">
+                    <img src="CROMPTOM.jpg" alt="Brand 6">
+                    <p>Global standards</p>
+                </div>
+                <div class="brand-card">
+                    <img src="ASHIRVAD.jpg" alt="Brand 6">
+                    <p>Global standards</p>
+                </div>
+                <div class="brand-card">
+                    <img src="EXIDE.jpg" alt="Brand 6">
+                    <p>Global standards</p>
+                </div>
+                <div class="brand-card">
+                    <img src="PARRYWARE.jpg" alt="Brand 6">
+                    <p>Global standards</p>
+                </div>
+                <div class="brand-card">
+                    <img src="SHEENLAC.jpg" alt="Brand 6">
+                    <p>Global standards</p>
+                </div>
+                <div class="brand-card">
+                    <img src="TECHNOPAINTS.jpg" alt="Brand 6">
+                    <p>Global standards</p>
+                </div>
+                <div class="brand-card">
+                    <img src="CRI.jpg" alt="Brand 6">
+                    <p>Global standards</p>
+                </div>
+                <div class="brand-card">
+                    <img src="VIHAN.jpg" alt="Brand 6">
+                    <p>Global standards</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Shop Gallery</h2>
+                <p>Take a visual tour of our shop</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="INTERIOR.jpg" alt="Shop Interior 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="PRODUCTS.jpg" alt="Product Display">
+                </div>
+                <div class="gallery-item">
+                    <img src="CUSTOMER.jpg" alt="Customer Service">
+                </div>
+                <div class="gallery-item">
+                    <img src="EXTERIOR.jpg" alt="Shop Exterior">
+                </div>
+                <div class="gallery-item">
+                    <img src="PRODUCTS2.jpg" alt="Featured Products">
+                </div>
+                <div class="gallery-item">
+                    <img src="CUSTOMER2.jpg" alt="Shop Interior 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="customer 1.jpg" alt="Shop Interior 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="customer 2.jpg" alt="Shop Interior 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="CUSTOMER3.jpg" alt="Shop Interior 2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our team</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Reach Out to Us</h3>
+                    <div class="contact-detail">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Near APGVB Bank, Garbham, Vizianagaram, 535102</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Contact</h4>
+                            <p>+91 9666169359,
+                               +91 8889996880 </p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>SSVagencies13122017@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">🕒</div>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Monday to Sunday: 10:00 AM - 8:00 PM</p>
+                            
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/ssvagencies" title="Instagram">📸</a>
+                        <a href="https://wa.me/9666169359" title="WhatsApp">📱</a>
+                    </div>
+                </div>
+                <div class="map">
+                    <!-- Replace with actual Google Maps iframe code -->
+                    <img src="/api/placeholder/600/400" alt="Google Map Location" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>SSV Agencies</h3>
+                    <p>Your trusted partner for quality products and exceptional service since 2017.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#brands">Brands</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>📍 Near APGVB Bank, Garbham, Vizianagaram, 535102</li>
+                        <li>📞 +91 9666169359</li>
+                        <li>✉️ SSVagencies13123017@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 SSV Agencies. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.getElementById('navLinks');
+            
+            // Toggle mobile menu
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+            });
+            
+            // Close mobile menu when clicking on a link
+            const navItems = document.querySelectorAll('.nav-links a');
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.textContent = '☰';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
